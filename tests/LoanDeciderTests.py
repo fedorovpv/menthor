@@ -70,7 +70,7 @@ class TestLoanDecider:
             ('Rating 2', expected_year_amount(amount=10, years=1, rate=10.25), {'rating': 2, 'asking_for': LoanDecider.MAX_AMOUNT_PER_RATING[2]})
         ])
     def test_border_values_max_amount(self, message, exp_year_payment, params):
-        """Testing border values"""
+        """Testing border values, max and a bit more."""
         config = self.get_config(**params)
         loan_decider = LoanDecider(**config)
         approved, year_payment = loan_decider.decide()
