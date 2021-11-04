@@ -44,7 +44,7 @@ class TestLoanDecider:
         config = self.get_config(**params)
         loan_decider = LoanDecider(**config)
         approved, year_payment = loan_decider.decide()
-        if exp_approved:   # we are testing approvement, not payment, so if it's None when loan is approved -- ok, None otherwise
+        if exp_approved:   # we are testing approvement, not payment, so if it's not None when loan is approved -- ok, None otherwise
             year_payment_is_ok = year_payment is not None
         else:
             year_payment_is_ok = year_payment is None
